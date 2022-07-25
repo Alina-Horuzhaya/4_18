@@ -1,0 +1,104 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+    line-height: 1.4;
+    min-width: 320px;
+    overflow-x: hidden;
+    height: auto;
+    background: linear-gradient(45deg, #58b6b9, #edf1cf);
+}
+
+
+.header {
+    position: relative;
+    min-height: 812px;
+}
+
+.header .row {
+    margin-top: -50px;
+    min-height: 812px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header-content h4 {
+    margin-top:-10px;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.pole input {
+    border-radius: 10px;
+    border: thick double #58b6b9;
+    font-size: 20px;
+}
+th {
+    font-size: 16px;
+}
+
+.btn_cancel {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 12px;
+    border: none;
+    background-color: rgba(	255, 160, 122, 0.5);
+    font-color: black;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: 700;
+    background-color: rgba(96, 210, 214, 0.3);
+    box-shadow: 0px 5px 15px rgba(78, 165, 134, 0.6);
+}
+
+.btn_cancel:hover {
+    box-shadow: 0px 5px 15px rgba(78, 165, 134, 0.6);
+    transform: scale(1.05);
+}
+
+input[type=submit] {
+position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    font-color: black;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0px 5px 15px rgba(78, 165, 134, 0.6);
+    background-color: #58b6b9;
+}
+
+input[type=submit]:hover {
+position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    font-color: black;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0px 5px 15px rgba(78, 165, 134, 0.6);
+    background-color: #58b6b9;
+}
+
+

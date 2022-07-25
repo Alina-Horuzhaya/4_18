@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- тег для корректного отображения -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- подключение файлов со стилями-->
+    <link rel="stylesheet" type="text/css" href="create.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-reboot.min.css">
+    <!-- подлючение шрифтов -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script> <!-- скрипт для общей валидации формы-->
+
+    <script src="https://unpkg.com/imask"></script> <!-- скрипт для валидации номера телефона-->
+    <!-- тег кодировки -->
+    <meta charset="UTF-8">
+    <title>Создание стандартной визитки</title>
+    <!-- тег со стилем для ссылок -->
+    <style>
+        A {
+        text-decoration: none;
+        color: black;
+        }
+
+        A:hover {
+        text-decoration: none;
+        color: black;
+        }
+
+        input:focus:invalid {
+	    border: 5px solid firebrick;
+	    box-shadow: 0 0 8px darkred;
+        }
+
+        .container {
+        background: linear-gradient(45deg, #edf1cf, #58b6b9);
+        border: 12px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 header-content"> <br> <br>
+            <h4>Заполните поля визитки </h4> </div>
+    <form action="/cgi-bin/create.py">
+        <!-- таблица с полями -->
+        <table align="center">
+            <tr>
+                <th>Фамилия Имя (Отчество)*</th>
+            </tr>
+            <tr>
+                <td class="pole"><input type="text" name="FIO" required pattern="^[A-Za-zА-Яа-яЁё\s]{3,}"></td>
+            </tr>
+            <tr>
+                <th>Номер телефона*</th>
+            </tr>
+            <tr>
+                <td class="pole"><input type="text" name="CELL" required placeholder="+7(###)-###-##-##"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td class="pole"><input type="text" name="EMAIL" placeholder="ivanov@mail.ru" pattern="^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-0-9A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$"></td>
+            </tr>
+            <tr>
+                <th>Ссылка на сервис </th>
+            </tr>
+            <tr>
+                <td class="pole"><input type="text" name="SOCIAL" placeholder="ivanov_i"></td>
+            </tr>
+            <tr>
+                <th>Город</th>
+            </tr>
+            <tr>
+                <td class="pole"><input type="text" name="NOTE"></td>
+            </tr>
+<!-- кнопка для генерации кода -->
+            <tr>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+<!-- кнопка для перехода на страницу с шаблонами -->
+            <tr>
+                <td colspan="2"> <button class="btn_cancel"> <a href="section.html"> Назад </a> </button> </td>
+            </tr>
+        </table>
+    </form>
+        </div>
+    </div>
+</header>
+
+<script>
+
+var elements = document.getElementsByName("CELL");
+for (var i = 0; i < elements.length; i++) {
+  new IMask(elements[i], {
+    mask: '+{7}(000)000-00-00',
+  });
+}
+
+</script>
+
+</body>
+</html>
